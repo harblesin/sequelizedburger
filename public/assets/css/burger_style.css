@@ -1,0 +1,55 @@
+/*The styling for the index.handlebars*/
+body{
+    background-color: rgb(172, 130, 39);
+    background-image: url("../img/background.jpg")
+}
+
+#menu{
+    border: 5px inset rgb(119, 106, 106);
+    background-color: white;
+    padding: 15px;
+    border-radius: 30px;
+    background-image: url(../img/Menu-Board.jpg);
+    color: white;
+}
+
+#trash{
+    border: 5px inset rgb(119, 106, 106);
+    background-color: white;
+    padding: 15px;
+    border-radius: 30px;
+    background-image: url(../img/Menu-Board.jpg);
+    min-height: 670px;
+    color:rgb(255, 255, 255);
+}
+
+.eatBurger{
+    border-radius: 20px; 
+    font-size: 12px; 
+    padding: 2px; 
+    border: 1px outset rgb(156, 82, 21);
+}
+
+.trashBurger{
+    border-radius: 20px; 
+    font-size: 12px; 
+    padding: 2px; 
+    border: 1px outset rgb(101, 206, 233);
+}
+
+#addBurger{
+    margin-top:15px;
+}
+
+#top{
+    width:100%;
+}
+#bottom{
+    width:100%;
+}
+#topT{
+    width:100%;
+}
+#bottomT{
+    width:100%;
+}

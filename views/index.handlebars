@@ -1,0 +1,68 @@
+<div class='container'>
+
+    <div class="jumbotron">
+        <h1 class="display-4" style="text-align: center; font-family: 'franklin gothic medium';letter-spacing: 8px">EAT
+            • DA • BORGER</h1>
+        <img class="card-img-top rounded mx-auto d-block" src="/assets/img/burger.png" alt="BORGER"
+            style="height: 200px; width: 200px">
+        <hr class="my-4">
+        <h2 class="lead" style='text-align: center'>Eat a burger, put a burger on the menu, the world is your oyster . .
+            burger!
+        </h2>
+    </div>
+
+    <div class='row'>
+        <div class='col-6'>
+            <div id="menu">
+                <h1 style="text-align: center">MENU</h1>
+                <img src="../assets/img/burg_top.png" alt="Top Bun" id="top">
+                <ul style="text-align: center">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li>
+                        {{burger_name}}
+                        <button class="eatBurger btn btn-danger" data-id="{{this.id}}">Devour!</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+                <img src="../assets/img/burg_bottom.png" alt="Bottom Bun" id = "bottom">
+            </div>
+
+        </div>
+
+        <div class='col-6'>
+            <div id="trash">
+                <h1 style="text-align: center">EATEN</h1>
+                <img src="../assets/img/topT.png" alt="Top Teeth" id = "topT">
+                <ul style="text-align: center">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li>
+                        {{burger_name}}
+                        <button class="trashBurger btn btn-info" data-id="{{this.id}}">Trash it!</button>
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+                <img src="../assets/img/bottomT.png" alt="Bottom Teeth" id = "bottomT">
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="form-group" style="margin-top:20px">
+        <input type="text" class="form-control" id="newBurger" placeholder="Type the burger you want on the menu here!">
+        <div class="text-right">
+            <button type="submit" class="btn btn-danger" id="addBurger">
+                Add Burger
+            </button>
+        </div>
+    </div>
+
+
+
+</div>
