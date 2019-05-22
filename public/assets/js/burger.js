@@ -9,8 +9,7 @@ function validated (){
 //Creates an object containing the text entered into the field
     //as a string, and a value pair of false for the devoured boolean.
     var burger = {
-        burger_name: $("#newBurger").val().trim(),
-        devoured: false
+        burger_name: $("#newBurger").val().trim()
     };
 
     //Passes the object into the AJAX PUT request
