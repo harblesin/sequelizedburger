@@ -53,3 +53,8 @@ body{
 #bottomT{
     width:100%;
 }
+
+#customerName{
+    width:50%;
+    margin: auto;
+}

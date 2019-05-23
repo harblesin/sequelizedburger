@@ -22,6 +22,7 @@
                     <li>
                         {{burger_name}}
                         <button class="eatBurger btn btn-danger" data-id="{{this.id}}">Devour!</button>
+                        <input type="text" class="form-control" id = "customerName" placeholder="Who's dining on this burger?">
                     </li>
                     {{/unless}}
                     {{/each}}
@@ -40,6 +41,7 @@
                     {{#if devoured}}
                     <li>
                         {{burger_name}}
+                        <p>Eaten by {{customer_name}}</p>
                         <button class="trashBurger btn btn-info" data-id="{{this.id}}">Trash it!</button>
                     </li>
                     {{/if}}

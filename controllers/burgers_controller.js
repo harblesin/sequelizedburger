@@ -1,5 +1,4 @@
-//Pulls in the express module and the burger object using the ORM
-var express = require("express");
+//Pulls in the models folder for later use
 var db = require("../models");
 
 //Sets the express method Router() to the variable router
@@ -8,15 +7,13 @@ var db = require("../models");
 
 module.exports = function(app) {
 
-
-
-
 //Sets the default empty url endpoint route to execute
 //the selectAll function through the ORM, passing the results
 //into the index handlebars, populating the page
 app.get("/", function(req,res){
     console.log("Routed");
-    db.burger.findAll().then(function(data){
+    db.burger.findAll({order: [['burger_name', 'ASC']
+    ]}).then(function(data){
         res.render("index", {
             burgers: data});
     });
