@@ -15,7 +15,8 @@ app.get("/", function(req,res){
     db.burger.findAll({order: [['burger_name', 'ASC']
     ], include: [db.customer]}).then(function(data){
         res.render("index", {
-            burgers: data});
+            burgers: data,
+            customers: data});
     });
 });
 

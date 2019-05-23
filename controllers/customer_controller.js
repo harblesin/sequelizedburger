@@ -2,8 +2,9 @@ var db = require("../models");
 
 module.exports = function(app){
 
-    app.get('/', function(){
+    app.get('/api/customer', function(req,res){
         db.customer.findAll().then(function(results){
+            console.log("GET CUSTOMER")
             res.render("index", {
                 customers: results
             })
