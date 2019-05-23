@@ -52,21 +52,21 @@ $('.eatBurger').click(function (event) {
     //valued pair its going to change in the db
     var burger = {
         devoured: true,
-        customer_name: $("#customerName").val()//"YES"//customerName
+        customer_name: $("#customerName").val()
     };
 
     function sending() {
 
-        //Creates the route using the id, and makes
+        // Creates the route using the id, and makes
         // an AJAX PUT request, with the value pair holding
         // object, burger, passed in
-        // $.ajax("/api/burger/" + id, {
-        //     method: "PUT",
-        //     data: burger
-        // }).then(function () {
-        //     console.log("Ate borger");
-        //     // location.reload();
-        // });
+        $.ajax("/api/burger/" + id, {
+            method: "PUT",
+            data: burger
+        }).then(function () {
+            console.log("Ate borger");
+            // location.reload();
+        });
 
         $.post("api/customer", burger, function () {
             console.log("added customer")
@@ -79,7 +79,7 @@ $('.eatBurger').click(function (event) {
     sending();
 
     if(clicked){
-        //location.reload();
+        location.reload();
     }
     else{return}
 

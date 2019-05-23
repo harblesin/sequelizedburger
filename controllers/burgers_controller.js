@@ -13,7 +13,7 @@ module.exports = function(app) {
 app.get("/", function(req,res){
     console.log("Routed");
     db.burger.findAll({order: [['burger_name', 'ASC']
-    ]}).then(function(data){
+    ], include: [db.customer]}).then(function(data){
         res.render("index", {
             burgers: data});
     });

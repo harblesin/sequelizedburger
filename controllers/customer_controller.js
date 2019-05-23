@@ -2,6 +2,14 @@ var db = require("../models");
 
 module.exports = function(app){
 
+    app.get('/', function(){
+        db.customer.findAll().then(function(results){
+            res.render("index", {
+                customers: results
+            })
+        })
+    })
+
     app.get("/api/customer/:id", function(req,res){
         db.customer.findOne({
             where:{
@@ -13,7 +21,7 @@ module.exports = function(app){
         });
     });
 
-    app.post("api/customer", function(req,res){
+    app.post("/api/customer", function(req,res){
         db.customer.create({customer_name: req.body.customer_name})
         .then(function(results){
             res.json(results);

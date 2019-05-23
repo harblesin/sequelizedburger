@@ -24,6 +24,7 @@ app.set("view engine", "handlebars");
 //var routes = require("./controllers/burgers_controller.js");
 
 require("./controllers/burgers_controller.js")(app);
+require("./controllers/customer_controller.js")(app);
 
 //Tell express to use said imported routes
 //app.use(routes);
